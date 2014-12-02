@@ -12,6 +12,12 @@ namespace Application;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+use Application\Model\Usuario;
+use Application\Model\UsuarioTable;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\TableGateway\TableGateway;
+
+
 class Module
 {
     public function onBootstrap(MvcEvent $e)
@@ -43,15 +49,15 @@ class Module
             'factories' => array(
                 'Application\Model\UsuarioTable' =>  function($sm) {
                     $tableGateway = $sm->get('UsuarioTableGateway');
-                    $table = new AlbumTable($tableGateway);
+                    $table = new UsuarioTable($tableGateway);
                     return $table;
-                }/*,
+                },
                 'UsuarioTableGateway' => function ($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                     $resultSetPrototype = new ResultSet();
-                    $resultSetPrototype->setArrayObjectPrototype(new Album());
+                    $resultSetPrototype->setArrayObjectPrototype(new Usuario());
                     return new TableGateway('usuario', $dbAdapter, null, $resultSetPrototype);
-                },*/
+                },
             ),
         );
     }
