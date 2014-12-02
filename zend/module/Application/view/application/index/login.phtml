@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Cadastre-se</h3>
+            </div>
+            <div class="panel-body">
+                <h1><?php echo sprintf($this->translate('Welcome to %sZend Framework 2%s'), '<span class="zf-green">', '</span>') ?></h1>
+                <p>
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirme Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            Female
+                            </label>
+                            <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Man
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Date</label>
+                            <input type="data" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> I read terms see in <a href="#">contract it</a>
+                            </label>
+                        </div>
+                        </p>
+                        <p>
+                            <a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank">Acessar !</a>
+                        </p>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Login</h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <form role="form">
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Check me out
+                        </label>
+                        </div>
+                        </p>
+                        <p><a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank">Acessar !</a></p>
+                    </form>
+            </div>
+            <?php echo $valor; ?>
+        </div>
+    </div>
+</div>
