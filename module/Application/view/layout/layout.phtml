@@ -1,5 +1,4 @@
-<?php echo $this->doctype(); ?>
-
+<?php echo $this->doctype();?>
 <html lang="pt">
     <head>
         <meta charset="utf-8">
@@ -42,11 +41,11 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Inicio') ?></a></li>
-                        <li class=""><a href="<?php echo $this->url('ensaio') ?>"><?php echo $this->translate('Ensaios') ?></a></li>
-                        <li class=""><a href="<?php echo $this->url('sobre') ?>"><?php echo $this->translate('Sobre') ?></a></li>
-                        <li class=""><a href="<?php echo $this->url('contato') ?>"><?php echo $this->translate('Contato') ?></a></li>
-                      <li class=""><a href="<?php echo $this->url('login') ?>"><?php echo $this->translate('Login') ?></a></li>
+                        <li class="<?php echo 'Indexindex' == $CURRENT_ROUTE_VALID_MENU?'active':''; ?>"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Inicio') ?></a></li>
+                         <li class="<?php echo 'Ensaioindex' == $CURRENT_ROUTE_VALID_MENU?'active':''; ?>"><a href="<?php echo $this->url('ensaio') ?>"><?php echo $this->translate('Ensaios') ?></a></li>
+                        <li class="<?php echo 'Sobreindex' == $CURRENT_ROUTE_VALID_MENU?'active':''; ?>"><a href="<?php echo $this->url('sobre') ?>"><?php echo $this->translate('Sobre') ?></a></li>
+                         <li class="<?php echo 'Contatoindex' == $CURRENT_ROUTE_VALID_MENU?'active':''; ?>"><a href="<?php echo $this->url('contato') ?>"><?php echo $this->translate('Contato') ?></a></li>
+                       <li class="<?php echo 'Indexlogin' == $CURRENT_ROUTE_VALID_MENU?'active':''; ?>"><a href="<?php echo $this->url('login') ?>"><?php echo $this->translate('Login') ?></a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

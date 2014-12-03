@@ -22,9 +22,31 @@ class Module
 {
     public function onBootstrap(MvcEvent $e)
     {
-        $eventManager        = $e->getApplication()->getEventManager();
-        $moduleRouteListener = new ModuleRouteListener();
-        $moduleRouteListener->attach($eventManager);
+        $sm = $e->getApplication()->getServiceManager();
+
+        $router = $sm->get('router');
+        $request = $sm->get('request');
+        $matchedRoute = $router->match($request);
+
+        $params = $matchedRoute->getParams();
+
+        $controller = $params['controller'];
+        $action = $params['action'];
+
+        $module_array = explode('\\', $controller);
+        $module = array_pop($module_array);
+
+        $route = $matchedRoute->getMatchedRouteName();
+
+        $e->getViewModel()->setVariables(
+            array(
+                'CURRENT_MODULE_NAME' => $module,
+                'CURRENT_CONTROLLER_NAME' => $controller,
+                'CURRENT_ACTION_NAME' => $action,
+                'CURRENT_ROUTE_NAME' => $route,
+                'CURRENT_ROUTE_VALID_MENU' => $module.$action,
+            )
+        );
     }
 
     public function getConfig()
