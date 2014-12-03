@@ -9,10 +9,6 @@
                 <p>
                     <form role="form">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                         </div>
@@ -34,10 +30,6 @@
                             Man
                             </label>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Date</label>
-                            <input type="data" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> I read terms see in <a href="#">contract it</a>
@@ -45,7 +37,7 @@
                         </div>
                         </p>
                         <p>
-                            <a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank">Acessar !</a>
+                            <input type="submit" class="btn btn-success pull-right" value="Cadastrar !"/>
                         </p>
                     </form>
             </div>
@@ -59,25 +51,24 @@
             </div>
             <div class="panel-body">
                 <p>
-                    <form role="form">
+                    <form role="form" action=<?php echo $this->url('authentifh'); ?> method="POST">
                         <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="exampleInputPassword1"><?php echo $this->translate('Password') ?></label>
+                        <input type="password" name="senha" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
                         <div class="checkbox">
                         <label>
-                          <input type="checkbox"> Check me out
+                          <input type="checkbox"><?php echo $this->translate('Save It') ?>.
                         </label>
                         </div>
                         </p>
-                        <p><a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank">Acessar !</a></p>
+                        <p><input type="submit" value="Acessar !" class="btn btn-success pull-right"></p>
                     </form>
             </div>
-            <?php echo $valor; ?>
         </div>
     </div>
 </div>

@@ -86,6 +86,14 @@ msgstr "Nos escreva no IRC"
 msgid "An error occurred"
 msgstr "Ocorreu um erro"
 
+#: ../view/error/login.phtml:65
+msgid "Save It"
+msgstr "Lembrar"
+
+#: ../view/error/login.phtml:65
+msgid "Password"
+msgstr "Senha"
+
 #: ../view/error/index.phtml:8
 msgid "Additional information"
 msgstr "Informação adicional"

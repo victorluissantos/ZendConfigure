@@ -17,28 +17,49 @@ class IndexController extends AbstractActionController
 
     protected $usuarioTable;
 
+    public function __construct(){
+
+    }
+
     public function indexAction()
     {
         return new ViewModel();
     }
+
     public function loginAction()
     {
-
-    	$this->results = array(
-    		'promocao' => 'Comprei o dobro pela metade do preço !',
-    		'valor' => '209,99',
-            'albums' => $this->getUser()->fetchAll()
-    		);
-
-    	return new ViewModel($this->results);
+    	return new ViewModel();
     }
-    public function getUser()
+
+    public function authentifhAction()
     {
+        try{
+            if(!$this->usuarioTable){
+                $sm = $this->getServiceLocator();
+                $this->usuarioTable = $sm->get('Application\Model\UsuarioTable');
+            }
+            /*Coletando valores*/
+            $email = (string) $_POST['email'];
+            $senha = (string) $_POST['senha'];
+
+            $this->ususario = $this->usuarioTable->findUserByEmailAndPass($email, $senha);
+
+            if(!$this->ususario){
+                return $this->redirect()->toRoute('login', array(
+                    'login' => $this->params()->fromRoute('login')
+                ));
+            }
+
+            /*Caso tenha encontrado o usuario crias as sessoes*/
+            //header("location:http://www.google.com");
+            return $this->redirect()->toRoute('home', array(
+                'home' => $this->params()->fromRoute('home')
+            ));
+            /*retireciona para pagina interna do sistema*/
         
-        if(!$this->usuarioTable){
-            $sm = $this->getServiceLocator();
-            $this->usuarioTable = $sm->get('Application\Model\UsuarioTable');
+        } catch (Exception $e) {
+            echo "Exceção pega: ",  $e->getMessage(), "\n";
         }
-        return $this->usuarioTable;
+    
     }
 }

@@ -30,6 +30,39 @@ return array(
                         ),
                     ),
             ),
+            'authentifh' => array(
+                    'type' => 'Zend\Mvc\Router\Http\Literal',
+                    'options' => array(
+                        'route' => '/authentifh',
+                        'defaults' => array(
+                            'controller' => 'Application\Controller\Index',
+                            'action' => 'authentifh',
+                        ),
+                    ),
+            ),
+            /*Actions Controller Contato*/
+            'ensaio' => array(
+                    'type' => 'Zend\Mvc\Router\Http\Literal',
+                    'options' => array(
+                        'route' => '/ensaio',
+                        'defaults' => array(
+                            'controller' => 'Application\Controller\Ensaio',
+                            'action' => 'index',
+                        ),
+                    ),
+            ),
+            /*Actions Controller Contato*/
+            'sobre' => array(
+                    'type' => 'Zend\Mvc\Router\Http\Literal',
+                    'options' => array(
+                        'route' => '/sobre',
+                        'defaults' => array(
+                            'controller' => 'Application\Controller\Sobre',
+                            'action' => 'index',
+                        ),
+                    ),
+            ),
+            /*Actions Controller Contato*/
             'contato' => array(
                     'type' => 'Zend\Mvc\Router\Http\Literal',
                     'options' => array(
@@ -82,7 +115,7 @@ return array(
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'pt_BR',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
@@ -94,7 +127,9 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Application\Controller\Contato' => 'Application\Controller\ContatoController'
+            'Application\Controller\Contato' => 'Application\Controller\ContatoController',
+            'Application\Controller\Sobre' => 'Application\Controller\SobreController',
+            'Application\Controller\Ensaio' => 'Application\Controller\EnsaioController'
         ),
     ),
     'view_manager' => array(
